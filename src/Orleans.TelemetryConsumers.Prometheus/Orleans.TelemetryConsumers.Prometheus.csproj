@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>JeffreyZhang</Authors>
+    <Version>0.0.1</Version>
+    <Description>Prometheus implementation of Orleans Telemetry API.</Description>
   </PropertyGroup>
 
   <ItemGroup>
