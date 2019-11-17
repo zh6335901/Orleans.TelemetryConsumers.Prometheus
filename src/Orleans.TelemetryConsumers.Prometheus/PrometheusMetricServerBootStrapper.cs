@@ -9,7 +9,7 @@ namespace Orleans.TelemetryConsumers.Prometheus
 
         public void Start(int port)
         {
-            lock (_metricServer)
+            lock (this)
             {
                 if (_metricServer == null)
                 {

@@ -12,6 +12,11 @@ namespace Orleans.Hosting
             return hostBuilder.ConfigureServices(services => ConfigureServices(services, port));
         }
 
+        public static ISiloHostBuilder AddPrometheusTelemetryConsumer(this ISiloHostBuilder hostBuilder, int port = 1234)
+        {
+            return hostBuilder.ConfigureServices(services => ConfigureServices(services, port));
+        }
+
         private static void ConfigureServices(IServiceCollection services, int port)
         {
             var bootStrapper = new PrometheusMetricServerBootStrapper();
