@@ -44,7 +44,7 @@ namespace Orleans.TelemetryConsumers.Prometheus
             PrometheusMetrics
                 .DependencyDuration
                 .WithLabels(dependencyName, commandName, success.ToString())
-                .Observe(duration.TotalMilliseconds);
+                .Observe(duration.TotalSeconds);
         }
 
         public void TrackEvent(string eventName, IDictionary<string, string> properties = null, IDictionary<string, double> metrics = null)
@@ -71,8 +71,8 @@ namespace Orleans.TelemetryConsumers.Prometheus
         {
             PrometheusMetrics
                 .MetricDuration
-                .WithLabels( GetCategoryFromMetricName(name), name)
-                .Observe(value.TotalMilliseconds);
+                .WithLabels(GetCategoryFromMetricName(name), name)
+                .Observe(value.TotalSeconds);
         }
 
         public void TrackRequest(string name, DateTimeOffset startTime, TimeSpan duration, string responseCode, bool success)
@@ -80,7 +80,7 @@ namespace Orleans.TelemetryConsumers.Prometheus
             PrometheusMetrics
                 .RequestDuration
                 .WithLabels(name, responseCode, success.ToString())
-                .Observe(duration.TotalMilliseconds);
+                .Observe(duration.TotalSeconds);
         }
 
         public void Flush()
