@@ -1,6 +1,9 @@
 # Orleans.TelemetryConsumers.Prometheus
 Prometheus implementation of Orleans Telemetry API.
 
+# Installation
+    dotnet add package Orleans.TelemetryConsumers.Prometheus
+
 # Usage
 Register in code before initializing the Orleans Silo:
 
