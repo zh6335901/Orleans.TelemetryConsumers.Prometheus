@@ -12,7 +12,7 @@
       "name": "VAR_JOBS",
       "type": "constant",
       "label": "jobs",
-      "value": "dispatcher-silo",
+      "value": "-- Replace with your prometheus collect job name --",
       "description": ""
     }
   ],
