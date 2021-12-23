@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>JeffreyZhang</Authors>
     <Title>Orleans Telemetry Consumer - Prometheus</Title>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Description>Prometheus implementation of Orleans Telemetry API.</Description>
   </PropertyGroup>
 

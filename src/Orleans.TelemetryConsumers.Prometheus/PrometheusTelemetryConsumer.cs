@@ -39,7 +39,12 @@ namespace Orleans.TelemetryConsumers.Prometheus
                 .Inc(value);
         }
 
-        public void TrackDependency(string dependencyName, string commandName, DateTimeOffset startTime, TimeSpan duration, bool success)
+        public void TrackDependency(
+            string dependencyName, 
+            string commandName, 
+            DateTimeOffset startTime, 
+            TimeSpan duration, 
+            bool success)
         {
             PrometheusMetrics
                 .DependencyDuration
@@ -47,19 +52,28 @@ namespace Orleans.TelemetryConsumers.Prometheus
                 .Observe(duration.TotalSeconds);
         }
 
-        public void TrackEvent(string eventName, IDictionary<string, string> properties = null, IDictionary<string, double> metrics = null)
+        public void TrackEvent(
+            string eventName, 
+            IDictionary<string, string> properties = null, 
+            IDictionary<string, double> metrics = null)
         {
             PrometheusMetrics.EventCounter.Inc();
             AddMetrics(metrics);
         }
 
-        public void TrackException(Exception exception, IDictionary<string, string> properties = null, IDictionary<string, double> metrics = null)
+        public void TrackException(
+            Exception exception, 
+            IDictionary<string, string> properties = null, 
+            IDictionary<string, double> metrics = null)
         {
             PrometheusMetrics.ExceptionCounter.Inc();
             AddMetrics(metrics);
         }
 
-        public void TrackMetric(string name, double value, IDictionary<string, string> properties = null)
+        public void TrackMetric(
+            string name, 
+            double value, 
+            IDictionary<string, string> properties = null)
         {
             PrometheusMetrics
                 .MetricGauge
@@ -67,7 +81,10 @@ namespace Orleans.TelemetryConsumers.Prometheus
                 .Set(value);
         }
 
-        public void TrackMetric(string name, TimeSpan value, IDictionary<string, string> properties = null)
+        public void TrackMetric(
+            string name, 
+            TimeSpan value, 
+            IDictionary<string, string> properties = null)
         {
             PrometheusMetrics
                 .MetricDuration
@@ -75,7 +92,12 @@ namespace Orleans.TelemetryConsumers.Prometheus
                 .Observe(value.TotalSeconds);
         }
 
-        public void TrackRequest(string name, DateTimeOffset startTime, TimeSpan duration, string responseCode, bool success)
+        public void TrackRequest(
+            string name, 
+            DateTimeOffset startTime, 
+            TimeSpan duration, 
+            string responseCode, 
+            bool success)
         {
             PrometheusMetrics
                 .RequestDuration
