@@ -28,4 +28,4 @@ Then access http://host:port/metrics, You can see the content like below:
     ...
 
 # Grafana dashboard
-
+[grafana-dashboard.json](https://github.com/zh6335901/Orleans.TelemetryConsumers.Prometheus/blob/master/grafana.json)
